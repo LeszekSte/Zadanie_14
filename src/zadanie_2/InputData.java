@@ -8,7 +8,7 @@ public class InputData {
 
     public ArrayList writeData() {
         List player = new ArrayList<Person>();
-        final String koniec = "STOP";
+        final String koniec = "stop";
         int i = 0;
         String lName = null;
         String fName = null;
@@ -17,12 +17,12 @@ public class InputData {
         do {
             i++;
             System.out.printf("%d. Podaj nazwisko zawodnika - (lub stop)\n", i);
-            lName = sc.nextLine().toUpperCase();
-            if (lName.equals(koniec)) end = true;
+            lName = sc.nextLine();
+            if (lName.toLowerCase().equals(koniec)) end = true;
 
             if (!end) {
                 System.out.printf("Podaj imię zawodnika\n", i);
-                fName = sc.nextLine().toUpperCase();
+                fName = sc.nextLine();
                 boolean ok = false;
                 do {
                     try {
